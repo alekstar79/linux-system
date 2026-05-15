@@ -1,6 +1,4 @@
-// ============================================================
 // FileManager — Three-pane file manager with breadcrumb nav
-// ============================================================
 
 import { useState, useMemo, useCallback, useRef } from 'react';
 import { useFileSystem } from '@/hooks/useFileSystem';

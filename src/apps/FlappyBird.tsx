@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, RotateCcw, Trophy } from 'lucide-react';
+import { /* Play, */ RotateCcw, Trophy } from 'lucide-react';
 
 const GRAVITY = 0.5;
 const FLAP_POWER = -8;
@@ -74,7 +74,7 @@ export default function FlappyBird() {
 
     // Clouds
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    [60, 200, 320].forEach((cx, i) => {
+    [60, 200, 320].forEach((_cx, i) => {
       const offset = (frameRef.current * 0.3 + i * 80) % (CANVAS_WIDTH + 60) - 30;
       ctx.beginPath();
       ctx.ellipse(offset, 60 + i * 30, 30, 15, 0, 0, Math.PI * 2);

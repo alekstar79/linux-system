@@ -1,6 +1,4 @@
-// ============================================================
 // Todo List — Task management with projects, priorities, filters
-// ============================================================
 
 import { useState, useEffect, useMemo } from 'react';
 import {

@@ -1,9 +1,19 @@
-import { useState, useEffect, useCallback } from 'react';
+import {useEffect, useState} from 'react';
 import {
-  Server, Upload, Download, FolderPlus, Trash2, RefreshCw, ChevronRight,
-  File, Folder, HardDrive, Globe, Link, Unlink, X, Check
+  Check,
+  ChevronRight,
+  Download,
+  File,
+  Folder,
+  Globe,
+  HardDrive,
+  Link,
+  RefreshCw,
+  Server,
+  Unlink,
+  Upload
 } from 'lucide-react';
-import { useFileSystem } from '@/hooks/useFileSystem';
+import {useFileSystem} from '@/hooks/useFileSystem';
 
 interface RemoteFile {
   id: string;
@@ -24,23 +34,22 @@ interface TransferItem {
 
 const generateMockRemoteFiles = (): RemoteFile[] => {
   const rootId = 'remote-root';
-  const files: RemoteFile[] = [
-    { id: rootId, name: '/', type: 'folder', size: 0, date: '', parentId: null },
-    { id: 'r1', name: 'public_html', type: 'folder', size: 0, date: '2025-01-15', parentId: rootId },
-    { id: 'r2', name: 'logs', type: 'folder', size: 0, date: '2025-01-20', parentId: rootId },
-    { id: 'r3', name: 'backups', type: 'folder', size: 0, date: '2025-02-01', parentId: rootId },
-    { id: 'r4', name: 'index.html', type: 'file', size: 4500, date: '2025-03-01', parentId: 'r1' },
-    { id: 'r5', name: 'style.css', type: 'file', size: 3200, date: '2025-03-02', parentId: 'r1' },
-    { id: 'r6', name: 'script.js', type: 'file', size: 8900, date: '2025-03-03', parentId: 'r1' },
-    { id: 'r7', name: 'logo.png', type: 'file', size: 25600, date: '2025-02-15', parentId: 'r1' },
-    { id: 'r8', name: 'README.md', type: 'file', size: 2100, date: '2025-01-10', parentId: rootId },
-    { id: 'r9', name: 'server.log', type: 'file', size: 128000, date: '2025-03-10', parentId: 'r2' },
-    { id: 'r10', name: 'error.log', type: 'file', size: 45000, date: '2025-03-10', parentId: 'r2' },
-    { id: 'r11', name: 'backup-2025-03-01.tar.gz', type: 'file', size: 10485760, date: '2025-03-01', parentId: 'r3' },
-    { id: 'r12', name: 'backup-2025-02-01.tar.gz', type: 'file', size: 9876543, date: '2025-02-01', parentId: 'r3' },
-    { id: 'r13', name: '.htaccess', type: 'file', size: 450, date: '2025-01-05', parentId: rootId },
+  return [
+    {id: rootId, name: '/', type: 'folder', size: 0, date: '', parentId: null},
+    {id: 'r1', name: 'public_html', type: 'folder', size: 0, date: '2025-01-15', parentId: rootId},
+    {id: 'r2', name: 'logs', type: 'folder', size: 0, date: '2025-01-20', parentId: rootId},
+    {id: 'r3', name: 'backups', type: 'folder', size: 0, date: '2025-02-01', parentId: rootId},
+    {id: 'r4', name: 'index.html', type: 'file', size: 4500, date: '2025-03-01', parentId: 'r1'},
+    {id: 'r5', name: 'style.css', type: 'file', size: 3200, date: '2025-03-02', parentId: 'r1'},
+    {id: 'r6', name: 'script.js', type: 'file', size: 8900, date: '2025-03-03', parentId: 'r1'},
+    {id: 'r7', name: 'logo.png', type: 'file', size: 25600, date: '2025-02-15', parentId: 'r1'},
+    {id: 'r8', name: 'README.md', type: 'file', size: 2100, date: '2025-01-10', parentId: rootId},
+    {id: 'r9', name: 'server.log', type: 'file', size: 128000, date: '2025-03-10', parentId: 'r2'},
+    {id: 'r10', name: 'error.log', type: 'file', size: 45000, date: '2025-03-10', parentId: 'r2'},
+    {id: 'r11', name: 'backup-2025-03-01.tar.gz', type: 'file', size: 10485760, date: '2025-03-01', parentId: 'r3'},
+    {id: 'r12', name: 'backup-2025-02-01.tar.gz', type: 'file', size: 9876543, date: '2025-02-01', parentId: 'r3'},
+    {id: 'r13', name: '.htaccess', type: 'file', size: 450, date: '2025-01-05', parentId: rootId},
   ];
-  return files;
 };
 
 const formatBytes = (bytes: number) => {
@@ -64,8 +73,8 @@ export default function FtpClient() {
   const [transfers, setTransfers] = useState<TransferItem[]>([]);
   const [selectedLocal, setSelectedLocal] = useState<string | null>(null);
   const [selectedRemote, setSelectedRemote] = useState<string | null>(null);
-  const [showNewFolder, setShowNewFolder] = useState(false);
-  const [newFolderName, setNewFolderName] = useState('');
+  // const [showNewFolder, setShowNewFolder] = useState(false);
+  // const [newFolderName, setNewFolderName] = useState('');
 
   useEffect(() => {
     const rootNode = Object.values(fs.nodes).find(n => n.parentId === null);
