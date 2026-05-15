@@ -1,4 +1,4 @@
-# Linux desktop environment replica, styled after Ubuntu
+# Linux System
 
 A web-based Linux desktop environment replica, styled after Ubuntu, featuring over 50 applications, all built using TypeScript and Vite.
 
@@ -7,7 +7,7 @@ A web-based Linux desktop environment replica, styled after Ubuntu, featuring ov
 **[View Live Demo](https://alekstar79.github.io/linux-system)**
 
 <!-- TOC -->
-* [Linux desktop environment replica, styled after Ubuntu](#linux-desktop-environment-replica-styled-after-ubuntu)
+* [Linux System](#linux-system)
   * [Features](#features)
   * [Technologies Used](#technologies-used)
   * [Getting Started](#getting-started)
