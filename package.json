@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:gh-pages": "tsc -b && VITE_GITHUB_PAGES_BUILD=true vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

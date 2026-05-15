@@ -4,10 +4,10 @@ import { defineConfig } from 'vite'
 import { inspectAttr } from 'plugin-inspect-react-code'
 
 // https://vite.dev/config/
-const isProduction = process.env.NODE_ENV === 'production';
+const isGitHubPagesBuild = process.env.VITE_GITHUB_PAGES_BUILD === 'true';
 
 export default defineConfig({
-  base: isProduction ? '/linux-system/' : '/',
+  base: isGitHubPagesBuild ? '/linux-system/' : '/',
   plugins: [inspectAttr(), react()],
   server: {
     port: 3000,
