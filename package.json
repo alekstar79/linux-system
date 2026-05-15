@@ -1,5 +1,8 @@
 {
   "name": "@alekstar79/linux-system",
+  "description": "A web-based Linux desktop environment replica, styled after Ubuntu, featuring over 50 applications, all built using TypeScript and Vite.",
+  "author": "Aleksey Tarasenko <alekstar79@yandex.ru>",
+  "license": "MIT",
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -9,6 +12,20 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://github.com/alekstar79/linux-system.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekstar79/video-player.git"
+  },
+  "keywords": [
+    "linux",
+    "ubuntu",
+    "desktop",
+    "react",
+    "vite",
+    "tailwindcss",
+    "typescript"
+  ],
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
@@ -76,5 +93,9 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
