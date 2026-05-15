@@ -1,6 +1,4 @@
-// ============================================================
 // Git Client — Simulated git repository visualization
-// ============================================================
 
 import { useState, useCallback, useMemo } from 'react';
 import {

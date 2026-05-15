@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Layers, RotateCcw, Undo2, Settings } from 'lucide-react';
+import { RotateCcw, Undo2 /* , Layers, Settings */ } from 'lucide-react';
 
 type Suit = 'hearts' | 'diamonds' | 'clubs' | 'spades';
 type Rank = 'A' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K';

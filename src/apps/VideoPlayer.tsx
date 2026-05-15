@@ -1,6 +1,4 @@
-// ============================================================
 // Video Player — File picker, playback controls, fullscreen
-// ============================================================
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import {

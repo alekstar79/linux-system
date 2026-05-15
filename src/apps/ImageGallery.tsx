@@ -1,6 +1,4 @@
-// ============================================================
 // Image Gallery — Browse images from virtual file system
-// ============================================================
 
 import { useState, useCallback, useMemo, useRef } from 'react';
 import {

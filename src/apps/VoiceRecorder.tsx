@@ -1,6 +1,4 @@
-// ============================================================
 // Voice Recorder — Record, playback, waveform visualization
-// ============================================================
 
 import { useState, useRef, useEffect, memo } from 'react';
 import {

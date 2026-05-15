@@ -1,6 +1,4 @@
-// ============================================================
 // Screen Recorder — Record screen with preview and controls
-// ============================================================
 
 import { useState, useRef, useEffect, memo } from 'react';
 import {

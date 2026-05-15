@@ -1,6 +1,4 @@
-// ============================================================
 // JSON Formatter — Format, validate, minify, tree view
-// ============================================================
 
 import { useState, useCallback } from 'react';
 import { useFileSystem } from '@/hooks/useFileSystem';

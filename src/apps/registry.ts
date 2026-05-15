@@ -1,6 +1,4 @@
-// ============================================================
-// App Registry — All 54 Apps
-// ============================================================
+// App Registry
 
 import type { AppDefinition } from '@/types';
 
@@ -504,13 +502,22 @@ export const APP_REGISTRY: AppDefinition[] = [
     defaultSize: { width: 640, height: 480 },
     minSize: { width: 400, height: 320 },
   },
+  {
+    id: 'matrixrain',
+    name: 'Matrix Rain',
+    icon: 'Droplets',
+    category: 'Creative',
+    description: 'Interactive Matrix-style digital rain animation',
+    defaultSize: { width: 800, height: 560 },
+    minSize: { width: 480, height: 360 },
+  },
 ];
 
 export const getAppById = (id: string): AppDefinition | undefined =>
   APP_REGISTRY.find((a) => a.id === id);
 
-export const getAppsByCategory = (category: string): AppDefinition[] =>
-  APP_REGISTRY.filter((a) => a.category === category);
+// export const getAppsByCategory = (category: string): AppDefinition[] =>
+//   APP_REGISTRY.filter((a) => a.category === category);
 
 export const getDefaultDockApps = (): string[] => [
   'filemanager',
@@ -518,4 +525,5 @@ export const getDefaultDockApps = (): string[] => [
   'texteditor',
   'browser',
   'settings',
+  'matrixrain'
 ];

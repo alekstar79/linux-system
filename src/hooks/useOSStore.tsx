@@ -41,6 +41,7 @@ const defaultDesktopIcons: DesktopIcon[] = [
   { id: 'desk-settings', name: 'Settings', icon: 'Settings', appId: 'settings', position: { x: 96, y: 16 }, isSelected: false },
   { id: 'desk-browser', name: 'Web Browser', icon: 'Globe', appId: 'browser', position: { x: 96, y: 106 }, isSelected: false },
   { id: 'desk-calendar', name: 'Calendar', icon: 'Calendar', appId: 'calendar', position: { x: 96, y: 196 }, isSelected: false },
+  { id: 'desk-matrixrain', name: 'Matrix Rain', icon: 'Droplets', appId: 'matrixrain', position: { x: 96, y: 286 }, isSelected: false },
 ];
 
 const createInitialDockItems = (): DockItem[] => {
@@ -466,7 +467,11 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
 
 export const useOS = () => {
   const ctx = useContext(OSContext);
-  if (!ctx) throw new Error('useOS must be used within OSProvider');
+
+  if (!ctx) {
+    throw new Error('useOS must be used within OSProvider');
+  }
+
   return ctx;
 };
 

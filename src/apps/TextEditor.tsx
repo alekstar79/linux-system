@@ -1,6 +1,4 @@
-// ============================================================
 // Text Editor — Multi-file text editor with syntax highlighting
-// ============================================================
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import {

@@ -1,6 +1,4 @@
-// ============================================================
 // Markdown Preview — Split-pane editor + live preview
-// ============================================================
 
 import { useState, useCallback, useMemo, useRef } from 'react';
 import { useFileSystem } from '@/hooks/useFileSystem';

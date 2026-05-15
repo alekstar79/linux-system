@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import {
   Rss, RefreshCw, Check, CheckCheck, Plus, X, ChevronLeft,
-  ExternalLink, Clock, Globe
+  Clock, Globe // , ExternalLink
 } from 'lucide-react';
 
 interface Article {

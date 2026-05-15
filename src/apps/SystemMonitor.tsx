@@ -1,6 +1,4 @@
-// ============================================================
 // System Monitor — Processes, Resources, and File Systems
-// ============================================================
 
 import { useState, useEffect, useMemo } from 'react';
 import { Search, Activity, Cpu, HardDrive, Wifi, XCircle } from 'lucide-react';

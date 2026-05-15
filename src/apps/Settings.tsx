@@ -1,6 +1,4 @@
-// ============================================================
 // System Settings — Full system preferences panel
-// ============================================================
 
 import { useState, useCallback } from 'react';
 import {

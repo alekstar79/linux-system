@@ -1,6 +1,4 @@
-// ============================================================
 // Spreadsheet — Grid with formulas, formatting, CSV export
-// ============================================================
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {

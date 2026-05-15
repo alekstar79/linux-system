@@ -1,6 +1,4 @@
-// ============================================================
 // Weather — City search with realistic mock weather data
-// ============================================================
 
 import { useState, useMemo, useCallback, memo } from 'react';
 import {

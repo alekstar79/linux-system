@@ -1,6 +1,4 @@
-// ============================================================
 // Terminal — Bash-like command processing
-// ============================================================
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useFileSystem } from '@/hooks/useFileSystem';

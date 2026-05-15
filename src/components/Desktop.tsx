@@ -50,8 +50,8 @@ const Desktop = memo(function Desktop() {
 
     const dx = e.clientX - dragStartPos.current.x;
     const dy = e.clientY - dragStartPos.current.y;
-    const newX = iconStartPos.current.x + dx;
-    const newY = iconStartPos.current.y + dy;
+    // const newX = iconStartPos.current.x + dx;
+    // const newY = iconStartPos.current.y + dy;
 
     // Update position visually for smooth dragging
     draggedIconRef.current.style.transform = `translate(${dx}px, ${dy}px)`;
@@ -159,6 +159,7 @@ const Desktop = memo(function Desktop() {
           onMouseDown={(e) => handleIconMouseDown(e, icon)}
           onContextMenu={(e) => {
             e.stopPropagation();
+            e.preventDefault();
             dispatch({ type: 'SELECT_DESKTOP_ICON', id: icon.id });
             dispatch({
               type: 'SHOW_CONTEXT_MENU',
