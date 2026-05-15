@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { OSProvider, useOS } from '@/hooks/useOSStore';
+import { resolvePublicAsset } from '@/lib/utils';
 import BootSequence from '@/components/BootSequence';
 import LoginScreen from '@/components/LoginScreen';
 import Desktop from '@/components/Desktop';
@@ -119,7 +120,7 @@ function AppShell() {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url(${state.theme.wallpaper})`,
+              backgroundImage: `url(${resolvePublicAsset(state.theme.wallpaper)})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               zIndex: 0,

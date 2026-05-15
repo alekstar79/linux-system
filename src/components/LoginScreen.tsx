@@ -3,6 +3,7 @@
 import { useState, useCallback, memo } from 'react';
 import { LogOut, Moon, Power, User } from 'lucide-react';
 import { useOS } from '@/hooks/useOSStore';
+import { resolvePublicAsset } from '@/lib/utils';
 
 const LoginScreen = memo(function LoginScreen() {
   const { dispatch } = useOS();
@@ -33,7 +34,7 @@ const LoginScreen = memo(function LoginScreen() {
     <div
       className="fixed inset-0 z-[9998] flex items-center justify-center"
       style={{
-        backgroundImage: 'url(/wallpaper-default.jpg)',
+        backgroundImage: `url(${resolvePublicAsset('wallpaper-default.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

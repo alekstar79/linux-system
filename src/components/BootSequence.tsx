@@ -1,6 +1,7 @@
 // BootSequence — 4-phase animated boot
 
 import { useEffect, useState, memo } from 'react';
+import { resolvePublicAsset } from '@/lib/utils';
 
 const PHASE_LOGO = 0;
 const PHASE_LOADING = 1;
@@ -81,7 +82,7 @@ const BootSequence = memo(function BootSequence({ onComplete }: { onComplete: ()
       {phase === PHASE_TRANSITION && (
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/wallpaper-default.jpg)' }}
+          style={{ backgroundImage: `url(${resolvePublicAsset('wallpaper-default.jpg')})` }}
         />
       )}
 

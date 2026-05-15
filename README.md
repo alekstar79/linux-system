@@ -1,5 +1,10 @@
 # Linux System
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9%2B-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19%2B-blue.svg)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
+
 A web-based Linux desktop environment replica, styled after Ubuntu, featuring over 50 applications, all built using TypeScript and Vite.
 
 ![review](screenshot.png)

@@ -7,6 +7,7 @@ import {
   Star, Eye, Info, Search, Check,
 } from 'lucide-react';
 import { useOS } from '@/hooks/useOSStore';
+import { resolvePublicAsset } from '@/lib/utils';
 
 interface SettingCategory {
   id: string;
@@ -46,10 +47,10 @@ const ACCENT_COLORS = [
 ];
 
 const WALLPAPERS = [
-  { id: '/wallpaper-default.jpg', name: 'Default' },
-  { id: '/wallpaper-light.jpg', name: 'Light' },
-  { id: '/wallpaper-nature.jpg', name: 'Nature' },
-  { id: '/wallpaper-tech.jpg', name: 'Tech' },
+  { id: 'wallpaper-default.jpg', name: 'Default' },
+  { id: 'wallpaper-light.jpg', name: 'Light' },
+  { id: 'wallpaper-nature.jpg', name: 'Nature' },
+  { id: 'wallpaper-tech.jpg', name: 'Tech' },
 ];
 
 const Toggle: React.FC<{ value: boolean; onChange: (v: boolean) => void }> = ({ value, onChange }) => (
@@ -182,7 +183,7 @@ const Settings: React.FC = () => {
                     aspectRatio: '16/9',
                   }}
                 >
-                  <img src={w.id} alt={w.name} className="w-full h-full object-cover" />
+                  <img src={resolvePublicAsset(w.id)} alt={w.name} className="w-full h-full object-cover" />
                   <div className="absolute bottom-0 left-0 right-0 px-2 py-1 text-xs text-white" style={{ background: 'rgba(0,0,0,0.6)' }}>
                     {w.name}
                   </div>

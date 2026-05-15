@@ -2,6 +2,7 @@
 
 import { useCallback, memo, useState, useRef } from 'react';
 import { useOS } from '@/hooks/useOSStore';
+import { resolvePublicAsset } from '@/lib/utils';
 import * as Icons from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 import type { DesktopIcon as DesktopIconType } from '@/types';
@@ -131,7 +132,7 @@ const Desktop = memo(function Desktop() {
       ref={desktopRef}
       className="fixed inset-0 z-10"
       style={{
-        backgroundImage: `url(${theme.wallpaper})`,
+        backgroundImage: `url(${resolvePublicAsset(theme.wallpaper)})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         top: 28,
