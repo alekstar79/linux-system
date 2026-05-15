@@ -113,7 +113,6 @@ The application will be available at `http://localhost:5173`.
 
 ## Author
 
-- **Aleksey Tarasenko**
 - **Email:** <alekstar79@yandex.ru>
 - **GitHub:** [alekstar79](https://github.com/alekstar79)
 
