@@ -1,73 +1,117 @@
-# React + TypeScript + Vite
+# Linux desktop environment replica, styled after Ubuntu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based Linux desktop environment replica, styled after Ubuntu, featuring over 50 applications, all built using TypeScript and Vite.
 
-Currently, two official plugins are available:
+![review](screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[View Live Demo](https://alekstar79.github.io/linux-system)**
 
-## React Compiler
+<!-- TOC -->
+* [Linux desktop environment replica, styled after Ubuntu](#linux-desktop-environment-replica-styled-after-ubuntu)
+  * [Features](#features)
+  * [Technologies Used](#technologies-used)
+  * [Getting Started](#getting-started)
+    * [Prerequisites](#prerequisites)
+    * [Installation](#installation)
+    * [Running the Application](#running-the-application)
+  * [Available Scripts](#available-scripts)
+  * [Project Structure](#project-structure)
+  * [Author](#author)
+  * [License](#license)
+<!-- TOC -->
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- A fully functional desktop environment in your browser.
+- Over 50 pre-installed applications.
+- Window management with support for minimize, maximize, and close.
+- App launcher and dock for quick access to your favorite apps.
+- Customizable themes and wallpapers.
+- Notification system.
+- File manager for browsing the virtual file system.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework:** React
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** @radix-ui/react
+- **Icons:** lucide-react
+- **Form Management:** react-hook-form
+- **Schema Validation:** zod
+- **Routing:** react-router
+- **Linting:** ESLint
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm
+
+### Installation
+
+1.  Clone the repository:
+
+    ```bash
+    git clone https://github.com/alekstar79/linux-system.git
+    ```
+
+2.  Navigate to the project directory:
+
+    ```bash
+    cd linux-system
+    ```
+
+3.  Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+To start the development server, run:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the application for production.
+- `npm run lint`: Lints the source code.
+- `npm run preview`: Serves the production build locally.
+
+## Project Structure
+
 ```
+/
+├── public/              # Static assets
+├── src/                 # Source code
+│   ├── apps/            # Application definitions
+│   ├── components/      # React components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions
+│   ├── types/           # TypeScript types
+│   ├── App.tsx          # Main application component
+│   └── main.tsx         # Entry point
+├── .eslintrc.cjs        # ESLint configuration
+├── package.json         # Project metadata and dependencies
+├── tsconfig.json        # TypeScript configuration
+└── vite.config.ts       # Vite configuration
+```
+
+## Author
+
+- **Aleksey Tarasenko**
+- **Email:** <alekstar79@yandex.ru>
+- **GitHub:** [alekstar79](https://github.com/alekstar79)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
