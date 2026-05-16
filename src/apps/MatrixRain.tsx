@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import {
-  Play, Pause, Maximize, Minimize, Droplets
-} from 'lucide-react';
+// import { Play, Pause, Maximize, Minimize, Droplets } from 'lucide-react';
 
 type MatrixColor = 'green' | 'amber' | 'red' | 'blue';
 
@@ -29,12 +27,12 @@ interface Column {
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isPlaying /*, setIsPlaying */] = useState(true);
+  const [isFullscreen /*, setIsFullscreen */] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [density, setDensity] = useState(1);
   const [color, setColor] = useState<MatrixColor>('green');
-  const [showControls, setShowControls] = useState(true);
+  const [showControls /*, setShowControls */] = useState(true);
 
   const isPlayingRef = useRef(isPlaying);
   const speedRef = useRef(speed);
@@ -192,15 +190,15 @@ export default function MatrixRain() {
     }
   };
 
-  const toggleFullscreen = () => {
-    if (!isFullscreen) {
-      setIsFullscreen(true);
-      setShowControls(false);
-    } else {
-      setIsFullscreen(false);
-      setShowControls(true);
-    }
-  };
+  // const toggleFullscreen = () => {
+  //   if (!isFullscreen) {
+  //     setIsFullscreen(true);
+  //     setShowControls(false);
+  //   } else {
+  //     setIsFullscreen(false);
+  //     setShowControls(true);
+  //   }
+  // };
 
   return (
     <div ref={containerRef} className="relative flex flex-col h-full" style={{ background: colors.bg }}>
@@ -213,16 +211,16 @@ export default function MatrixRain() {
       {showControls && (
         <div className="relative z-10">
           {/* Toolbar */}
-          <div className="flex items-center gap-2 px-3 py-2 border-b" style={{ borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}>
-            <Droplets size={14} style={{ color: colors.primary }} />
-            <span className="text-xs font-medium flex-1" style={{ color: '#fff' }}>Matrix Rain</span>
-            {/*<button onClick={() => setIsPlaying(!isPlaying)} className="p-1.5 rounded" style={{ color: '#fff' }}>*/}
-            {/*  {isPlaying ? <Pause size={12} /> : <Play size={12} />}*/}
-            {/*</button>*/}
-            {/*<button onClick={toggleFullscreen} className="p-1.5 rounded" style={{ color: '#fff' }}>*/}
-            {/*  {isFullscreen ? <Minimize size={12} /> : <Maximize size={12} />}*/}
-            {/*</button>*/}
-          </div>
+          {/*<div className="flex items-center gap-2 px-3 py-2 border-b" style={{ borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}>*/}
+          {/*  <Droplets size={14} style={{ color: colors.primary }} />*/}
+          {/*  <span className="text-xs font-medium flex-1" style={{ color: '#fff' }}>Matrix Rain</span>*/}
+          {/*  <button onClick={() => setIsPlaying(!isPlaying)} className="p-1.5 rounded" style={{ color: '#fff' }}>*/}
+          {/*    {isPlaying ? <Pause size={12} /> : <Play size={12} />}*/}
+          {/*  </button>*/}
+          {/*  <button onClick={toggleFullscreen} className="p-1.5 rounded" style={{ color: '#fff' }}>*/}
+          {/*    {isFullscreen ? <Minimize size={12} /> : <Maximize size={12} />}*/}
+          {/*  </button>*/}
+          {/*</div>*/}
 
           {/* Settings */}
           <div className="flex items-center gap-3 px-3 py-1.5 border-b" style={{ borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}>
